@@ -1,6 +1,8 @@
 import 'babel-polyfill';
 import express from 'express';
 
+import cheeses from '../client/js/cheeses';
+
 const HOST = process.env.HOST;
 const PORT = process.env.PORT || 8080;
 
@@ -28,29 +30,9 @@ if (require.main === module) {
     runServer();
 }
 
-var cheeses = [
-    "Bath Blue",
-    "Barkham Blue",
-    "Buxton Blue",
-    "Cheshire Blue",
-    "Devon Blue",
-    "Dorset Blue Vinney",
-    "Dovedale",
-    "Exmoor Blue",
-    "Harbourne Blue",
-    "Lanark Blue",
-    "Lymeswold",
-    "Oxford Blue",
-    "Shropshire Blue",
-    "Stichelton",
-    "Stilton",
-    "Blue Wensleydale",
-    "Yorkshire Blue"
-];
-
 app.get('/cheeses', function(req, res) {
     res.json(cheeses)
-       .sendStatus(200)
+      .sendStatus(200)
 })
 
-export {app};
+ export {app};

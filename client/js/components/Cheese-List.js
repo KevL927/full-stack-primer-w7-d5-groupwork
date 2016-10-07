@@ -1,14 +1,16 @@
 import React from 'react';
-import reactdom from 'react-dom';
-
+import ReactDOM from 'react-dom';
 
 import cheeses from '../cheeses';
-console.log(cheeses);
 
-var CheeseList = React.createClass({
-    render: function (props) {
-        <ul>
-            <li>{props.cheeses}</li>
-        </ul>
-    }
-});
+    var threeCheeses = cheeses.slice(0,3);
+
+var CheeseList = function (props) {
+    console.log(threeCheeses);
+    let eachCheese = threeCheeses.map (cheese => <li> {cheese} </li> );
+        return ( 
+            <ul>{eachCheese}</ul>
+        );
+};
+
+export default CheeseList;
